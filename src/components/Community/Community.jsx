@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { indexPosts } from '../../api/posts'
+import WritePost from './WritePost'
 
-const Community = () => {
+const Community = ({ user }) => {
 // variables
   const [posts, setPosts] = useState([''])
 
@@ -12,6 +13,7 @@ const Community = () => {
       try {
         const res = await indexPosts()
         setPosts(res.data.posts)
+        // console.log(res)
       } catch (error) {
         console.log('error')
       }
@@ -21,13 +23,19 @@ const Community = () => {
 
   const postsList = posts.map(post => (
     <li key={post._id}>
-      <p>{post.title}</p>
+      <p>Title:{post.title}</p>
+      <p>Text:{post.text}</p>
     </li>
   ))
+
   return (
-    <div>
-      <ul>{postsList}</ul>
-    </div>
+    <>
+      <WritePost user={user} />
+      <div>
+        <ul>{postsList}</ul>
+      </div>
+
+    </>
   )
 }
 
