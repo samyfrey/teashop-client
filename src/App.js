@@ -9,6 +9,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import Community from './components/Community/Community'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <>
       <Header user={user} />
-      {msgAlerts.map(msgAlert => (
+      {msgAlerts.map((msgAlert) => (
         <AutoDismissAlert
           key={msgAlert.id}
           heading={msgAlert.heading}
@@ -37,21 +38,26 @@ const App = () => {
         <Routes>
           <Route
             path='/sign-up'
-            element={<SignUp msgAlert={msgAlert} setUser={setUser} /> }
+            element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
           />
           <Route
             path='/sign-in'
-            element={<SignIn msgAlert={msgAlert} setUser={setUser} /> }
+            element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
           />
           <Route
             path='/sign-out'
-            element={<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} /> }
+            element={
+              <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+            }
           />
           <Route
             path='/change-password'
-            element={<ChangePassword msgAlert={msgAlert} user={user} /> }
+            element={<ChangePassword msgAlert={msgAlert} user={user} />}
           />
-
+          <Route
+            path='/community'
+            element={<Community msgAlert={msgAlert} user={user} />}
+          />
         </Routes>
       </main>
     </>
