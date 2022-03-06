@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { writePost } from '../../api/posts'
 import PostForm from './PostForm'
-
 const WritePost = ({ user, setRenderPage }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [createdId, setCreatedId] = useState(null)
+
+  // only accessible to users logged in
 
   const handleSubmit = async event => {
     event.preventDefault()

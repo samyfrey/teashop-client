@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { indexPosts } from '../../api/posts'
 import WritePost from './WritePost'
-import { Navigate } from 'react-router-dom'
 
 const Community = ({ user }) => {
 // variables
@@ -31,7 +30,7 @@ const Community = ({ user }) => {
 
   return (
     <>
-      <WritePost user={user} />
+      <div>{user ? <WritePost user={user} /> : null }</div>
       <div>
         <h1>Messages from the community</h1>
         <ul>{postsList}</ul>
@@ -40,9 +39,5 @@ const Community = ({ user }) => {
     </>
   )
 }
-
-// create section (for signed in user)-- "Sign to write a post"
-
-// see all posts section
 
 export default Community
