@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { writePost } from '../../api/posts'
 import PostForm from './PostForm'
 
-const WritePost = ({ user }) => {
+const WritePost = ({ user, setRenderPage }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [createdId, setCreatedId] = useState(null)
@@ -30,7 +30,7 @@ const WritePost = ({ user }) => {
   return (
     <>
       <p>Write a post </p>
-      <PostForm title={title} text={text} setTitle={setTitle} setText={setText} handleSubmit={handleSubmit}/>
+      <PostForm title={title} text={text} setTitle={setTitle} setText={setText} handleSubmit={handleSubmit} setRenderPage={setRenderPage}/>
     </>
   )
 }

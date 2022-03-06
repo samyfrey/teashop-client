@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { indexPosts } from '../../api/posts'
 import WritePost from './WritePost'
+import { Navigate } from 'react-router-dom'
 
 const Community = ({ user }) => {
 // variables
   const [posts, setPosts] = useState([''])
 
   // need to make sure user is signed in
+
+  if (!user) {
+    return <Navigate to='/' />
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +37,7 @@ const Community = ({ user }) => {
     <>
       <WritePost user={user} />
       <div>
+        <h1>Messages from the community</h1>
         <ul>{postsList}</ul>
       </div>
 
