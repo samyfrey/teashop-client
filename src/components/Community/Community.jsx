@@ -9,10 +9,6 @@ const Community = ({ user }) => {
 
   // need to make sure user is signed in
 
-  if (!user) {
-    return <Navigate to='/' />
-  }
-
   useEffect(() => {
     const fetchData = async () => {
       try {
