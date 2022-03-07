@@ -26,10 +26,15 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg='primary' variant='dark' expand='md'>
+  <Navbar
+    style={{ backgroundColor: '#89C889' }}
+    expand='md'>
     <Container>
       <Navbar.Brand>
-        <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>react-auth-template</Link>
+        <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>
+          TeaBlog
+
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>

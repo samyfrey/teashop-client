@@ -18,6 +18,7 @@ const SignIn = ({ msgAlert, setUser }) => {
     try {
       const res = await signIn(email, password)
       setUser(res.data.user)
+      console.log('the response from sign in call is', res)
       msgAlert({
         heading: 'Sign In Success',
         message: signInSuccess,
