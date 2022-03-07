@@ -11,7 +11,6 @@ const SignIn = ({ msgAlert, setUser }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [shouldNavigate, setShouldNavigate] = useState(false)
-
   const onSignIn = async (event) => {
     event.preventDefault()
 
@@ -19,6 +18,7 @@ const SignIn = ({ msgAlert, setUser }) => {
       const res = await signIn(email, password)
       setUser(res.data.user)
       console.log('the response from sign in call is', res)
+
       msgAlert({
         heading: 'Sign In Success',
         message: signInSuccess,
