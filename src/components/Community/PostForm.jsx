@@ -13,14 +13,14 @@ const PostForm = ({ handleSubmit, title, text, setTitle, setText }) => {
           value={title}
           onChange={event => setTitle(event.target.value)}
         />
-        <input
+        <textarea
           placeholder="Text of your post"
           name="text"
           type="text"
           value={text}
           onChange={event => setText(event.target.value)}
         />
-        <button type="submit">Send</button>
+        <button type="submit">Post</button>
       </form>
     </>
   )

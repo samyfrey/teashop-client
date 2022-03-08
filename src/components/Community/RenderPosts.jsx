@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { deletePost } from '../../api/posts'
 
 const RenderPosts = ({ user, posts }) => {
@@ -14,10 +15,28 @@ const RenderPosts = ({ user, posts }) => {
       console.log(error)
     }
   }
+
+  // const handleEdit = async (post) => {
+  //   try {
+  //     const postId = post._id
+  //     const res = await showPost(user, postId)
+  //     console.log(res)
+  //     return (
+  //       <>
+  //         <p>{res.post.title}</p>
+  //       </>
+  //     )
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
   const editButtons = (post) => {
     return (
       <>
-        <button>Edit</button>
+        <Link to={`/community/${post._id}`}>
+          <button>Edit</button>
+        </Link>
         <button onClick={() => handleDelete(post)}>Delete</button>
 
       </>
@@ -26,12 +45,12 @@ const RenderPosts = ({ user, posts }) => {
   }
 
   return posts.map((post) => (
-    <li key={post._id}>
-      <p>Title:{post.title}</p>
-      <p>Text:{post.text}</p>
+    <ul key={post._id}>
+      <h4>{post.title}</h4>
+      <p>{post.text}</p>
       <div>{post.owner === user?._id && editButtons(post)}</div>
       {/* <div>{post.owner === user._id ? editButtons() : null }</div> */}
-    </li>
+    </ul>
   ))
 }
 

@@ -17,6 +17,25 @@ export const writePost = (user, title, text) => {
       }
     })
 }
+export const showPost = (user, postId) => {
+  return axios.get(`${apiUrl}/community/${postId}`, {
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
+
+export const editPost = (user, postId, title, text) => {
+  return axios.patch(`${apiUrl}/community/${postId}`,
+    {
+      post: { title, text }
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${user.token}`
+      }
+    })
+}
 
 export const deletePost = (user, postId) => {
   return axios.delete(`${apiUrl}/community/${postId}`, {

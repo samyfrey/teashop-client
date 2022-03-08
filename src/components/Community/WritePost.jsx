@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { writePost } from '../../api/posts'
 import PostForm from './PostForm'
+
 const WritePost = ({ user, setRenderPage }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
