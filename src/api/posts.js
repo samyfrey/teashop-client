@@ -17,3 +17,13 @@ export const writePost = (user, title, text) => {
       }
     })
 }
+
+export const deletePost = (user, postId) => {
+  return axios.delete(`${apiUrl}/community/${postId}`, {
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
+
+// export const editPost = (user, title, text)
