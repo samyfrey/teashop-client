@@ -9,6 +9,7 @@ const EditPost = ({ user }) => {
   //   const [post, setPost] = useState([''])
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
+  const [updated, setUpdated] = useState(false)
 
   if (!user) {
     return <Navigate to='/' />
@@ -35,13 +36,18 @@ const EditPost = ({ user }) => {
     try {
       await editPost(user, postId, title, text)
       console.log('edit request gone through')
+      setUpdated(true)
     } catch (error) {
       console.log('error is', error)
     }
   }
-  //   }
-  // show the post with text area and input
-  // have onClick button to axios patch
+
+  if (updated) {
+    // Navigate to the 'show' page
+    // console.log('updated object is:', updated)
+    return <Navigate to='/community'/>
+  }
+
   return (
     <div>
       <PostForm handleSubmit={handleSubmit} title={title} text={text} setTitle={setTitle} setText={setText}/>
