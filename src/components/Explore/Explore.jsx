@@ -1,10 +1,12 @@
 import React from 'react'
 import { exploreContent } from '../../content'
-import Product from './Product'
+import ProductCard from './ProductCard'
 
 const Explore = () => {
-  const exploreRender = exploreContent.map((item, index) => (
-    <Product key={index} item={item} />
+  const exploreRender = exploreContent.map((item) => (
+    <ul key={item.id}>
+      <ProductCard key={item.id} item={item} />
+    </ul>
   ))
 
   return (
