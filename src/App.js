@@ -12,6 +12,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import Community from './components/Community/Community'
 import EditPost from './components/Community/EditPost'
 import WritePost from './components/Community/WritePost'
+import Explore from './components/Explore/Explore'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -55,6 +56,10 @@ const App = () => {
           <Route
             path='/change-password'
             element={<ChangePassword msgAlert={msgAlert} user={user} />}
+          />
+          <Route
+            path='/'
+            element={<Explore msgAlert={msgAlert} />}
           />
           <Route
             path='/community'
