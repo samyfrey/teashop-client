@@ -4,7 +4,7 @@ export const StyledCard = styled.div`
     display: flex;
     align-items: center;
     max-width: 1000px;
-    width: 1000px;
+    // width: 1000px;
     height: 300px;
     background-color: #fff;
     border-radius: 15px;
@@ -22,7 +22,7 @@ export const StyledCard = styled.div`
         // height: 300px;
         border-radius: 5px;
         width: 200px;
-        height: 400px;
+        height: 300px;
         object-fit: cover;
 
         
@@ -30,8 +30,6 @@ export const StyledCard = styled.div`
 
     & > div {
         flex: 50%;
-    
-        // width: 50%;
         border: 3px solid grey;
 
     }

@@ -13,6 +13,7 @@ import Community from './components/Community/Community'
 import EditPost from './components/Community/EditPost'
 import WritePost from './components/Community/WritePost'
 import Explore from './components/Explore/Explore'
+import MyAccount from './components/Account/MyAccout'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -52,6 +53,10 @@ const App = () => {
             element={
               <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
             }
+          />
+          <Route
+            path='/myaccount'
+            element={<MyAccount msgAlert={msgAlert} user={user} />}
           />
           <Route
             path='/change-password'

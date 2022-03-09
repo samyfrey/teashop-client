@@ -12,12 +12,13 @@ const SignUp = ({ msgAlert, setUser }) => {
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
   const [shouldNavigate, setShouldNavigate] = useState(false)
+  const [username, setUsername] = useState('')
 
   const onSignUp = async (event) => {
     event.preventDefault()
 
     try {
-      await signUp(email, password, passwordConfirmation)
+      await signUp(email, username, password, passwordConfirmation)
       const res = await signIn(email, password)
       setUser(res.data.user)
       msgAlert({
@@ -56,6 +57,17 @@ const SignUp = ({ msgAlert, setUser }) => {
               value={email}
               placeholder='Enter email'
               onChange={event => setEmail(event.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              required
+              name='username'
+              value={username}
+              type='username'
+              placeholder='Choose a username'
+              onChange={event => setUsername(event.target.value)}
             />
           </Form.Group>
           <Form.Group controlId='password'>

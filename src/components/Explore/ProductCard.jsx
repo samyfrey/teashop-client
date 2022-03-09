@@ -11,7 +11,7 @@ const ProductCard = ({ item }) => {
 
         </div>
         <div className='imageSection'>
-          <img src={`${item.urlImg}`} alt=''/>
+          <img src={`${item.urlImg}`} alt={`${item.alt}`}/>
         </div>
 
       </StyledCard>

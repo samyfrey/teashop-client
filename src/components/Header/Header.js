@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const authenticatedOptions = (
   <>
-    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
+    <NavLink to='/myaccount' className='nav-link'>My Account</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </>
 )
@@ -40,7 +40,7 @@ const Header = ({ user }) => (
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ms-auto'>
           {user && (
-            <span className='navbar-text me-2'>Welcome, {user.email}</span>
+            <span className='navbar-text me-2'>Welcome, {user.username}!</span>
           )}
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}

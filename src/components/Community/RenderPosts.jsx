@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { deletePost } from '../../api/posts'
+import { StyledCard } from '../../Styles/Card.styled'
 
 const RenderPosts = ({ user, posts, msgAlert }) => {
   const handleDelete = async (post) => {
@@ -30,11 +31,17 @@ const RenderPosts = ({ user, posts, msgAlert }) => {
   }
 
   return posts.map((post) => (
+
     <ul key={post._id}>
-      <h4>{post.title}</h4>
-      <p>{post.text}</p>
-      <div>{post.owner === user?._id && editButtons(post)}</div>
+      <StyledCard>
+        <div>
+          <h4>{post.title}</h4>
+          <p>{post.text}</p>
+          <div>{post.owner === user?._id && editButtons(post)}</div>
+        </div>
+      </StyledCard>
     </ul>
+
   ))
 }
 
