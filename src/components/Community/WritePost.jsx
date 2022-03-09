@@ -4,29 +4,26 @@ import { Navigate } from 'react-router-dom'
 import { writePost } from '../../api/posts'
 import PostForm from './PostForm'
 
-const WritePost = ({ user, setRenderPage }) => {
+const WritePost = ({ user, setRenderPage, msgAlert }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [createdId, setCreatedId] = useState(null)
-  // only accessible to users logged in
 
   const handleSubmit = async event => {
     event.preventDefault()
-    // console.log('the user is', user)
     try {
       const res = await writePost(user, title, text)
-      console.log(res)
       setCreatedId(res.data.post._id)
-      console.log('the id', createdId)
-      // console.log('post created')
     } catch (error) {
-      console.log(error)
+      msgAlert({
+        heading: 'Failed to load',
+        message: error.message,
+        variant: 'danger'
+      })
     }
   }
 
   if (createdId) {
-    // Navigate to the 'show' page
-    // console.log('updated object is:', updated)
     return <Navigate to={'/community'}/>
   }
 
