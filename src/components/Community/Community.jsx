@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { indexPosts } from '../../api/posts'
 import RenderPosts from './RenderPosts'
-import WritePost from './WritePost'
+// import WritePost from './WritePost'
 
 const Community = ({ user }) => {
 // variables
-  const [posts, setPosts] = useState([''])
-
+  const [posts, setPosts] = useState([])
   // need to make sure user is signed in
 
   useEffect(() => {
@@ -34,7 +34,8 @@ const Community = ({ user }) => {
   // }
   return (
     <>
-      <div>{user ? <WritePost user={user} /> : 'Sign in to post about your experience!' }</div>
+      {/* <div>{user ? <WritePost user={user} /> : 'Sign in to post about your experience!' }</div> */}
+      <div>{user ? <Link to='/community/post' user={user}><button>Write a post</button></Link> : 'Sign in to post about your experience!' }</div>
       {/* option to show delete and update buttons could be ternary with user id */}
       <div>
         <h1>Messages from the community</h1>

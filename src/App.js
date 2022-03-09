@@ -11,6 +11,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import Community from './components/Community/Community'
 import EditPost from './components/Community/EditPost'
+import WritePost from './components/Community/WritePost'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -62,6 +63,10 @@ const App = () => {
           <Route
             path='/community/:postId'
             element={<EditPost msgAlert={msgAlert} user={user} />}
+          />
+          <Route
+            path='/community/post'
+            element={<WritePost msgAlert={msgAlert} user={user} />}
           />
 
         </Routes>
