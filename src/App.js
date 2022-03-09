@@ -14,6 +14,7 @@ import EditPost from './components/Community/EditPost'
 import WritePost from './components/Community/WritePost'
 import Explore from './components/Explore/Explore'
 import MyAccount from './components/Account/MyAccout'
+import About from './components/About/About'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -77,6 +78,10 @@ const App = () => {
           <Route
             path='/community/post'
             element={<WritePost msgAlert={msgAlert} user={user} />}
+          />
+          <Route
+            path='/about'
+            element={<About />}
           />
 
         </Routes>

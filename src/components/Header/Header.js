@@ -22,6 +22,7 @@ const alwaysOptions = (
   <>
     <NavLink to='/' className='nav-link'>Explore</NavLink>
     <NavLink to='/community' className='nav-link'>Community</NavLink>
+    <NavLink to='/about' className='nav-link'>About</NavLink>
   </>
 )
 
