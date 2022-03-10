@@ -32,7 +32,18 @@ I regularly went back to my wireframes to keep in mind the user experience and o
 
 ## Challenges and stretch goals
 One of my main challenges is styling, which is what I want to improve going forward. I want to make better use of the various styling libraries out there.
-My main stretch goal is to turn the site into an online shop. I also want to learn Redux to avoid losing the sign in when a user reloads the page. 
+
+Stretch goals are: 
+- Display username as author of the comment
+- Turn the site into an online shop
+- Learn Redux to avoid losing the sign in when a user reloads the page. 
+
 
 
 ## Visuals & Screenshots
+
+![image](https://user-images.githubusercontent.com/89148403/157769091-9598d234-4e95-4e37-8ff0-f62f1d1cf84f.png)
+
+### Write a post screen (for signed-in users only)
+
+![image](https://user-images.githubusercontent.com/89148403/157769440-26dc9a49-3ef8-4592-a747-d40fbc2e43bb.png)
