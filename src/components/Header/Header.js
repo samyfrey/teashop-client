@@ -40,9 +40,9 @@ const Header = ({ user }) => (
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ms-auto'>
-          {user && (
+          {/* {user.username && (
             <span className='navbar-text me-2'>Welcome, {user.username}!</span>
-          )}
+          )} */}
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
         </Nav>

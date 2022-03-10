@@ -5,14 +5,14 @@ const ProductCard = ({ item }) => {
   return (
     <>
       <StyledCard layout={item.id % 2 === 0 && 'row-reverse'}>
-        <div>
+        <div className='text'>
           <h1>{item.title}</h1>
           <p>{item.text}</p>
 
         </div>
-        <div className='imageSection'>
+        {/* <div className='=image'>
           <img src={`${item.urlImg}`} alt={`${item.alt}`}/>
-        </div>
+        </div> */}
 
       </StyledCard>
     </>

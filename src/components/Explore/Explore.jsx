@@ -4,14 +4,14 @@ import ProductCard from './ProductCard'
 
 const Explore = () => {
   const exploreRender = exploreContent.map((item) => (
-    <ul key={item.id}>
-      <ProductCard key={item.id} item={item} />
-    </ul>
+
+    <ProductCard key={item.id} item={item} />
+
   ))
 
   return (
     <div>
-      <ul>{exploreRender}</ul>
+      {exploreRender}
     </div>
   )
 }

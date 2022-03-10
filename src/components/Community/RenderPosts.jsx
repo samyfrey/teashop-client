@@ -32,15 +32,13 @@ const RenderPosts = ({ user, posts, msgAlert }) => {
 
   return posts.map((post) => (
 
-    <ul key={post._id}>
-      <StyledCard>
-        <div>
-          <h4>{post.title}</h4>
-          <p>{post.text}</p>
-          <div>{post.owner === user?._id && editButtons(post)}</div>
-        </div>
-      </StyledCard>
-    </ul>
+    <StyledCard key={post._id}>
+      <div>
+        <h4>{post.title}</h4>
+        <p>{post.text}</p>
+        <div>{post.owner === user?._id && editButtons(post)}</div>
+      </div>
+    </StyledCard>
 
   ))
 }

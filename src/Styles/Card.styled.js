@@ -3,38 +3,29 @@ import styled from 'styled-components'
 export const StyledCard = styled.div`
     display: flex;
     align-items: center;
-    max-width: 1000px;
-    // width: 1000px;
-    height: 300px;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    margin: 40px 0;
-    padding: 60px;
-    border: 3px solid grey;
+    margin: 40px auto;
+    padding: 60px; 
+    flex-direction: 'column';
 
- 
 
-    flex-direction: ${({ layout }) => layout || 'row'};
-
-    img {
-        
-        // height: 300px;
-        border-radius: 5px;
-        width: 200px;
-        height: 300px;
-        object-fit: cover;
-
-        
+    // img { 
+    //     width: 20rem;        
+    //     height: 20rem;
+    //     justify-content: center;
+    //     align-items: center;
     // }
 
     & > div {
-        flex: 50%;
-        border: 3px solid grey;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
 
     }
 
-    // @media (max-width: ${({ theme }) => theme.mobile}) {
-    //     flex-direction: column;
-    // }
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
 `

@@ -5,7 +5,8 @@ const MyAccount = ({ user, msgAlert }) => {
   return (
     <>
       <ChangePassword msgAlert={msgAlert} user={user} />
-      <h1>Username: {user.username}</h1>
+      {user.username &&
+      <h1>Username: {user.username}</h1>}
     </>
   )
 }
