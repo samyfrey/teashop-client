@@ -14,6 +14,11 @@ const WritePost = ({ user, setRenderPage, msgAlert }) => {
     try {
       const res = await writePost(user, title, text)
       setCreatedId(res.data.post._id)
+      msgAlert({
+        heading: 'Your post was added',
+        message: `Created ${title} successfully.`,
+        variant: 'success'
+      })
     } catch (error) {
       msgAlert({
         heading: 'Failed to load',
@@ -29,8 +34,7 @@ const WritePost = ({ user, setRenderPage, msgAlert }) => {
 
   return (
     <>
-      <p>Write a post </p>
-      <PostForm title={title} text={text} setTitle={setTitle} setText={setText} handleSubmit={handleSubmit} setRenderPage={setRenderPage}/>
+      <PostForm title={title} text={text} setTitle={setTitle} setText={setText} handleSubmit={handleSubmit}/>
     </>
   )
 }

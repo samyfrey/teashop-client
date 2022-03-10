@@ -12,3 +12,8 @@ export const StyledButton = styled.button`
     display: inline-block;
     font-size: 16px;
 `
+
+export const StyledEditButtons = styled.div`
+    font-size: 30px;
+    color: grey;
+`

@@ -7,8 +7,9 @@ export const StyledCard = styled.div`
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     margin: 40px auto;
-    padding: 60px; 
+    padding: 40px; 
     flex-direction: 'column';
+    max-width: 700px;
 
 
     // img { 

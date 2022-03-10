@@ -7,6 +7,7 @@ import RenderPosts from './RenderPosts'
 
 const Community = ({ user, msgAlert }) => {
   const [posts, setPosts] = useState([])
+  const [render, setRender] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,19 +23,19 @@ const Community = ({ user, msgAlert }) => {
       }
     }
     fetchData()
-  }, [])
+  }, [render])
 
   return (
     <>
       <StyleCommunity>
         <div className="community__header">
           <h1>Messages from the community</h1>
-          <div>{user ? <Link to='/community/post' user={user}><StyledButton>Write a post</StyledButton></Link> : 'Sign in or sign up to post about your experience!' }</div>
+          <div>{user ? <Link to='/community/post' user={user}><StyledButton>Leave a comment</StyledButton></Link> : 'Sign in or sign up to post about your experience!' }</div>
         </div>
 
       </StyleCommunity>
       <div>
-        <RenderPosts user={user} posts={posts}/>
+        <RenderPosts user={user} posts={posts} msgAlert={msgAlert} setPosts={setPosts} setRender={setRender}/>
       </div>
 
     </>

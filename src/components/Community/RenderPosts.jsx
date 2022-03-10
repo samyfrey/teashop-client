@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom'
 import { deletePost } from '../../api/posts'
 import { StyledCard } from '../../Styles/Card.styled'
 
-const RenderPosts = ({ user, posts, msgAlert }) => {
+const RenderPosts = ({ user, posts, msgAlert, setRender }) => {
   const handleDelete = async (post) => {
     try {
       const postId = post._id
       await deletePost(user, postId)
+      setRender(true)
+      msgAlert({
+        heading: 'Post deleted',
+        variant: 'success'
+      })
     } catch (error) {
       msgAlert({
         heading: 'Failed to load',
@@ -21,7 +26,9 @@ const RenderPosts = ({ user, posts, msgAlert }) => {
     return (
       <>
         <Link to={`/community/${post._id}`}>
-          <button>Edit</button>
+          <button>
+           Edit
+          </button>
         </Link>
         <button onClick={() => handleDelete(post)}>Delete</button>
 
