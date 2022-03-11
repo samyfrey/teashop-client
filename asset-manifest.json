@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/teashop-client/static/css/main.432dfbff.chunk.css",
-    "main.js": "/teashop-client/static/js/main.c75bee24.chunk.js",
-    "main.js.map": "/teashop-client/static/js/main.c75bee24.chunk.js.map",
+    "main.js": "/teashop-client/static/js/main.6bc5162c.chunk.js",
+    "main.js.map": "/teashop-client/static/js/main.6bc5162c.chunk.js.map",
     "runtime-main.js": "/teashop-client/static/js/runtime-main.c2c227de.js",
     "runtime-main.js.map": "/teashop-client/static/js/runtime-main.c2c227de.js.map",
     "static/js/2.27dea916.chunk.js": "/teashop-client/static/js/2.27dea916.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.c2c227de.js",
     "static/js/2.27dea916.chunk.js",
     "static/css/main.432dfbff.chunk.css",
-    "static/js/main.c75bee24.chunk.js"
+    "static/js/main.6bc5162c.chunk.js"
   ]
 }
