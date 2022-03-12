@@ -27,14 +27,17 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar
-    style={{ backgroundColor: '#89C889' }}
-    expand='md'>
+  <Navbar style={{ backgroundColor: '#89C889' }} expand='md'>
     <Container>
       <Navbar.Brand>
         <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>
-          TeaBlog
-
+          <img
+            src='./images/new_logo.png'
+            height='70'
+            object-fit='cover'
+            overflow='hidden'
+            alt=''
+          />
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />

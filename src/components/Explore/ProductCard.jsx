@@ -8,7 +8,6 @@ const ProductCard = ({ item }) => {
         <div className='text'>
           <h1>{item.title}</h1>
           <p>{item.text}</p>
-
         </div>
         {/* <div className='=image'>
           <img src={`${item.urlImg}`} alt={`${item.alt}`}/>
