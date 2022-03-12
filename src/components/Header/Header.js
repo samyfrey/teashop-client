@@ -33,7 +33,7 @@ const Header = ({ user }) => (
         <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>
           <img
             src='./images/new_logo.png'
-            height='70'
+            height='50px'
             object-fit='cover'
             overflow='hidden'
             alt=''
