@@ -9,9 +9,9 @@ const ProductCard = ({ item }) => {
           <h1>{item.title}</h1>
           <p>{item.text}</p>
         </div>
-        {/* <div className='=image'>
+        <div className='=images'>
           <img src={`${item.urlImg}`} alt={`${item.alt}`}/>
-        </div> */}
+        </div>
 
       </StyledCard>
     </>
